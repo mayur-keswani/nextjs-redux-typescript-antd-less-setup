@@ -1,6 +1,10 @@
+/* eslint-disable no-undef */
+/* eslint-disable @typescript-eslint/no-var-requires */
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
+const withPlugins = require("next-compose-plugins");
+const withLess = require("next-plugin-antd-less");
 
-module.exports = nextConfig
+module.exports = withPlugins([[withLess]], {
+  reactStrictMode: false,
+
+});
